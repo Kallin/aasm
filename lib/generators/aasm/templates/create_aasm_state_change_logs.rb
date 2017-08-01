@@ -6,7 +6,7 @@ class CreateAasmStateChangeLogs < ActiveRecord::Migration
       t.string :from_state
       t.string :to_state
       t.string :transition_event
-      # You can add you own custom columns and make use of aasm.custom_column_values
+      # You can add you own custom columns and make use of aasm.custom_state_change_log_data
 
       t.timestamps
     end
