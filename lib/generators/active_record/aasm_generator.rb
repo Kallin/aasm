@@ -16,7 +16,10 @@ module ActiveRecord
         else
           migration_template "migration.rb", "db/migrate/aasm_create_#{table_name}.rb"
         end
-        migration_template "create_aasm_state_change_logs.rb", "db/migrate/create_aasm_state_change_logs.rb"
+
+        unless state_change_log_table_exists?
+          migration_template "create_aasm_state_change_logs.rb", state_change_log_migration_path
+        end
       end
 
       def generate_model

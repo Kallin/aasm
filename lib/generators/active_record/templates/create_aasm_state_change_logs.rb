@@ -1,4 +1,4 @@
-class CreateAasmStateChangeLogs < ActiveRecord::Migration
+class AASMCreateStateChangeLogs < ActiveRecord::Migration[<%=  ActiveRecord::VERSION::STRING.to_f %>]
   def change
     create_table :aasm_state_change_logs do |t|
       t.integer :model_id
